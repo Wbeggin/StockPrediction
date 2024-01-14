@@ -1,6 +1,6 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Chart</PageTitle>
 
 @using StockPredictionWeb.Models
 
@@ -25,7 +25,6 @@
         actualPrices = stockData.Select(item => item.ActualPrices).ToList();
         predictedPrices = stockData.Select(item => item.PredictedPrices).ToList();
         labels = stockData.Select(item => item.Date.ToShortDateString()).ToList();
-        Console.WriteLine(predictedPrices);
         await RenderWormAsync();
     }
 
