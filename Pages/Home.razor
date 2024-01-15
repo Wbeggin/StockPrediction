@@ -6,7 +6,7 @@
 
 <LineChart @ref="lineChart" />
 
-@code {
+@code {   
     [Inject]
     private StockDataService StockDataService { get; set; }
     private BarChart barChart;
@@ -72,8 +72,8 @@
 
         options.Scales.X.Title.Text = "Date";
         options.Scales.X.Title.Display = true;
-
-        options.Plugins.Title.Text = "RMSE: " + rmse + " & " + "R squared: " + r_squared;
+        
+        options.Plugins.Title.Text = "Predicted prices for Apple stock";
         options.Plugins.Title.Display = true;
         options.Plugins.Title.Font.Size = 20;
 
