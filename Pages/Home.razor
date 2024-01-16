@@ -5,6 +5,7 @@
 
 <PageTitle>Chart</PageTitle>
 
+<Chart></Chart>
 
 <ToolTip Tip=@tooltipText>
     <p style="text-decoration: underline; cursor: pointer;">
@@ -14,10 +15,6 @@
         RMSE for the LSTM model is @rmseLSTM.ToString("N5") and r-squared for the model is @r_squaredLSTM.ToString("N5").
     </p>
 </ToolTip>
-
-
-<Chart></Chart>
-
 
 @code{
     private double rmse = 3.2010853918806705;

@@ -25,7 +25,7 @@
         padding: 5px;
         border-radius: 6px;
         width: 300px;
-        top: 100%;
+        bottom: 100%;
         left: 50%;
         margin-left: -60px;
         text-align: center;
@@ -48,7 +48,7 @@
 
     private bool _isToolTipVisible = false;
     private bool _isMouseOver = false;
-    private const int ToolTipDelay = 500;
+    private const int ToolTipDelay = 200;
 
     private async Task ShowToolTip(MouseEventArgs e)
     {
