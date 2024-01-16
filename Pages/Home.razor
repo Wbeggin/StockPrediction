@@ -3,10 +3,17 @@
 <PageTitle>Chart</PageTitle>
 
 @using StockPredictionWeb.Models
+@using StockPredictionWeb.Components
+
+<ToolTip Tip=@tooltipText>
+    <p style="text-decoration: underline; cursor: pointer;">
+        RMSE for the model is @rmse.ToString("N5") and r-squared for the model is @r_squared.ToString("N5").
+    </p>
+</ToolTip>
 
 <LineChart @ref="lineChart" />
 
-@code {   
+@code {
     [Inject]
     private StockDataService StockDataService { get; set; }
     private BarChart barChart;
@@ -18,6 +25,10 @@
     private List<string> labels;
     private double rmse = 3.2010853918806705;
     private double r_squared = 0.9679652510248724;
+    private string tooltipText => $"RMSE measures the difference between predicted and actual values, " +
+        "while R-squared measures the proportion of the variance in the dependent variable " +
+        "that is predictable from the independent variable and R-squared values range from 0 to 1, " +
+        "with 1 indicating a perfect fit.";
 
     protected override async Task OnInitializedAsync()
     {
