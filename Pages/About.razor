@@ -1,7 +1,7 @@
 ﻿@page  "/about"
 
 <h3>About</h3>
-This is a small project that I made to learn more about predicting with GRU and displaying it in a Blazor WebAssembly app.
+This is a small project that I made to learn more about predicting with GRU and LSTM and displaying the results in a Blazor WebAssembly app.
 
 <div style="margin-bottom: 20px;"></div>
 
@@ -21,6 +21,7 @@ This data is then normalized using the Min-Max scaling technique to bring it wit
 
 The model is constructed using a GRU (Gated Recurrent Unit) neural network, a type of recurrent neural network (RNN) well-suited for sequential data.
 The model is implemented using the TensorFlow framework. The hyperparameters, such as sequence length, epochs, and batch size, are fine-tuned to achieve optimal predictive performance.
+The same method is used for the LSTM model (Long Short-Term Memory), with the same hyperparameters.
 <div style="margin-bottom: 20px;"></div>
 <h4>Training and Evaluation</h4>
 
@@ -28,14 +29,14 @@ The model is trained on a portion of the dataset, and its performance is evaluat
 These metrics provide insights into the accuracy and goodness-of-fit of our predictive model. 
 RMSE measures the difference between predicted and actual values, while R-squared measures the proportion of the variance in the dependent variable that is predictable from the independent variable and
 R-squared values range from 0 to 1, with 1 indicating a perfect fit.
-RMSE was found to be 3.2010853918806705, while R-squared was found to be 0.9679652510248724.
+For the GRU RMSE was found to be 3.2010853918806705, while R-squared was found to be 0.9679652510248724 and for the LSTM RMSE was found to be 4.252814113761786, while R-squared was found to be 0.943456898266785.
+Meaning that the GRU model is more accurate than the LSTM model here.
 
 <div style="margin-bottom: 20px;"></div>
 <h4>Visualizing Predictions</h4>
 
 To provide a comprehensive view of our model's predictions, we visualize the results through interactive charts.
 The plot displays true stock prices alongside predicted prices using blazor Bootstrap charts.
-The RMSE and R-squared values are also displayed to provide a measure of the model's accuracy.
 
 <div style="margin-bottom: 20px;"></div>
 

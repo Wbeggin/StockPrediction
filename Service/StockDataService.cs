@@ -23,4 +23,15 @@ public class StockDataService
             return csv.GetRecords<StockData>().ToList();
         }
     }
+
+    public async Task<List<StockData>> GetStockDataLSTMAsync()
+    {
+        var csvContent = await httpClient.GetStringAsync("data/stock_prediction_data_LSTM.csv");
+
+        using (var reader = new StringReader(csvContent))
+        using (var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)))
+        {
+            return csv.GetRecords<StockData>().ToList();
+        }
+    }
 }

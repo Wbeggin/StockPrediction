@@ -56,7 +56,7 @@ y_train, y_test = y[:train_size], y[train_size:]
 
 # Build the GRU model
 model = Sequential()
-model.add(GRU(50, input_shape=(sequence_length, 1)))
+model.add(GRU(50, input_shape=(sequence_length, 1))) # for LSTM model.add(LSTM(50, input_shape=(sequence_length, 1)))
 model.add(Dense(1))
 model.compile(optimizer='adam', loss='mean_squared_error')
 
